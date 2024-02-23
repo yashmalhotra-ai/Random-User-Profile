@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import getRandomUser from '../Utils/getRandomUser'
-import PublicCard from './PublicCard.Component';
+import PublicCard from './PublicCardComponent';
 import { usePostLocal } from '../Utils/useStoreLocal';
 import toast, { Toaster } from 'react-hot-toast';
 const Body = () => {

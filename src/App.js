@@ -1,5 +1,5 @@
-import Body from "./Components/Body.Component.js";
-import Header from "./Components/Header.component.js";
+import Body from "./Components/BodyComponent.js";
+import Header from "./Components/HeaderComponent.js";
 import "./index.css"
 import Routing from "./Router.js";
 function App() {

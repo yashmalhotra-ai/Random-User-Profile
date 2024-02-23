@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useGetfromLocal } from '../Utils/useStoreLocal';
 import toast, { Toaster } from 'react-hot-toast';
-import PublicCard from './PublicCard.Component';
+import PublicCard from './PublicCardComponent';
 
 const AllPublicUser = () => {
     const [publicUser, setPublicUser] = useState();
