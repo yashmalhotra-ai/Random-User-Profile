@@ -16,7 +16,7 @@ const Body = () => {
         try {
             let userObject = JSON.parse(localStorage.getItem("allPublicUser")) || {};
             const userID = userData.id.name;
-            
+
             // To store the previous data in same of allPublicUser
             userObject = {
                 ...userObject,
@@ -35,7 +35,7 @@ const Body = () => {
 
         <div>
             <Toaster
-                position="top-right"
+                position="top-center"
                 reverseOrder={false}
             />
             <section className="text-gray-400 bg-gray-900 h-screen">
