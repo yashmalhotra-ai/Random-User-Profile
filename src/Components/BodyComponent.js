@@ -5,7 +5,6 @@ import { usePostLocal } from '../Utils/useStoreLocal';
 import toast, { Toaster } from 'react-hot-toast';
 const Body = () => {
     const [publicUser, setPublicUser] = useState();
-    const result = usePostLocal(userData)
 
     useEffect(() => {
         handleRandomUser();
@@ -18,6 +17,7 @@ const Body = () => {
     }
 
     const addToLocal = (userData) => {
+        const result = usePostLocal(userData)
         result ? toast.success(`User ${userData?.name?.first} added`) : toast.error(`Failed to add at localStorage`);
     }
 

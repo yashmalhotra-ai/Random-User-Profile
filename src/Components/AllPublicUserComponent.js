@@ -5,12 +5,12 @@ import PublicCard from './PublicCardComponent';
 
 const AllPublicUser = () => {
     const [publicUser, setPublicUser] = useState();
-    const usersData = useGetfromLocal("allPublicUser");
     useEffect(() => {
         getFromLocal();
     }, [])
 
     const getFromLocal = () => {
+        const usersData = useGetfromLocal("allPublicUser");
         usersData ? toast.success(`Data Fetched from Local Storage`) : toast.error(`Failed to fetch the data from localStorage`);
         setPublicUser(usersData)
     }
