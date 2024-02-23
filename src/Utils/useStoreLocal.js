@@ -1,5 +1,5 @@
 
-const useStoreLocal = (providedUser) => {
+const usePostLocal = (providedUser) => {
     try {
         let userObject = JSON.parse(localStorage.getItem("allPublicUser")) || {};
         const userID = providedUser.id.name;
@@ -28,4 +28,4 @@ const useGetfromLocal = (localKey) => {
     }
 }
 
-export { useStoreLocal, useGetfromLocal };
+export { usePostLocal, useGetfromLocal };
