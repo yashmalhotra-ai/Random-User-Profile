@@ -18,7 +18,6 @@ const AllPublicUser = () => {
     return (
         <div>
             <Toaster
-                position="top-right"
                 reverseOrder={false}
             />
             <section className="text-gray-400 bg-gray-900 flex flex-wrap gap-2 h-full">

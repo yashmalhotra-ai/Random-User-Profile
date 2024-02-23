@@ -1,6 +1,7 @@
 import axios from "axios";
 import { RANDOM_API } from "../Constant";
 
+// API Call for random user
 const getRandomUser = async () => {
     try {
         const res = await axios.get(RANDOM_API);

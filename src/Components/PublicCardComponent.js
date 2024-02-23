@@ -3,6 +3,7 @@ import dateConvert from '../Utils/ConvertDate';
 
 
 const PublicCard = (User) => {
+    // Desturcturing Requried Data from User
     const { email, name, gender, location, login, dob, registered, picture } = User.publicUser || {};
     const userDOB = dateConvert(dob?.date)
     const userRegistration = dateConvert(registered?.date)

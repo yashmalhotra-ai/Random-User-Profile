@@ -1,4 +1,5 @@
 
+//Custom hook to get the data from local storage
 const useGetfromLocal = (localKey) => {
     try {
         let getUserObject = JSON.parse(localStorage.getItem(localKey));

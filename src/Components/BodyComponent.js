@@ -9,16 +9,20 @@ const Body = () => {
         handleRandomUser();
     }, [])
 
+    
     const handleRandomUser = async () => {
         const userData = await getRandomUser();
         setPublicUser(userData);
         try {
             let userObject = JSON.parse(localStorage.getItem("allPublicUser")) || {};
             const userID = userData.id.name;
+            
+            // To store the previous data in same of allPublicUser
             userObject = {
                 ...userObject,
                 [userID]: userData,
             }
+
             localStorage.setItem("allPublicUser", JSON.stringify(userObject));
             toast.success(`User ${userData?.name?.first} added`)
         } catch (error) {
