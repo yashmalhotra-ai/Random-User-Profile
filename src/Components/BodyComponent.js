@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import getRandomUser from '../Utils/getRandomUser'
 import PublicCard from './PublicCardComponent';
-import { usePostLocal } from '../Utils/useStoreLocal';
 import toast, { Toaster } from 'react-hot-toast';
 const Body = () => {
     const [publicUser, setPublicUser] = useState();
@@ -12,13 +11,20 @@ const Body = () => {
 
     const handleRandomUser = async () => {
         const userData = await getRandomUser();
-        addToLocal(userData);
         setPublicUser(userData);
-    }
-
-    const addToLocal = (userData) => {
-        const result = usePostLocal(userData)
-        result ? toast.success(`User ${userData?.name?.first} added`) : toast.error(`Failed to add at localStorage`);
+        try {
+            let userObject = JSON.parse(localStorage.getItem("allPublicUser")) || {};
+            const userID = userData.id.name;
+            userObject = {
+                ...userObject,
+                [userID]: userData,
+            }
+            localStorage.setItem("allPublicUser", JSON.stringify(userObject));
+            toast.success(`User ${userData?.name?.first} added`)
+        } catch (error) {
+            console.log("error", error);
+            toast.error(`Failed to add at localStorage`)
+        }
     }
 
     return (
