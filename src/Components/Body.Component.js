@@ -10,17 +10,17 @@ const Body = () => {
         handleRandomUser();
     }, [])
 
-
-    const addToLocal = (userData) => {
-        usePostLocal(userData) ? toast.success(`User ${userData?.name?.first} added`) : toast.error(`Failed to add at localStorage`);
-    }
-
-
     const handleRandomUser = async () => {
         const userData = await getRandomUser();
         addToLocal(userData);
         setPublicUser(userData);
     }
+
+    const addToLocal = (userData) => {
+        const result = usePostLocal(userData)
+        result ? toast.success(`User ${userData?.name?.first} added`) : toast.error(`Failed to add at localStorage`);
+    }
+
     return (
 
         <div>
